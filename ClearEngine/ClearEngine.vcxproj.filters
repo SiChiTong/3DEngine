@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>h;hpp;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\DirectX.h" />
+    <ClInclude Include="Source\GraphicsParams.h" />
+    <ClInclude Include="Source\Input\CInput.h" />
+    <ClInclude Include="Include\Actors\CActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Actors\RigidActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Actors\SkeletalActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DataStructures\CNode.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Geometry\GeometryCreator.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Geometry\GeometryTypes.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Geometry\Models.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Actors\GraphicsActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Actors\RigidGraphicsActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Actors\SkeletalGraphicsActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Camera\Camera.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Camera\Frustum.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\CGraphics.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\CRenderer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\GraphicsHelper.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\GraphicsTypes.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\MeshDrawer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\ShaderLights.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Rendering\Sky.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\ConstantBuffer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\DXBuffer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\DXShaderResourceView.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\IndexBuffer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\PixelShader.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\SamplerState.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\StructuredBuffer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\VertexBuffer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\Resources\VertexShader.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\SceneGraph\ContainerGNode.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\SceneGraph\DataGNode.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphics\SceneGraph\GNode.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\CInput.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Lights\DirectionalLight.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Lights\Light.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Lights\PointLight.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Lights\SpotLight.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\Textures\dds.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\Textures\DDSTextureLoader.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\Textures\pch.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\Textures\PlatformHelpers.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\Textures\resource.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\Textures\WICTextureLoader.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\AssetLoader.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\AssetLoadingUtil.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loading\GameAssets.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxTkBmpLoader.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxTkFPS.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxTkMatrixUtils.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxTkNamespaceMangle.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxTkRandom.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxTkStream.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\Toolkit\PxToolkit.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\CPhysics.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Physics\PhysicsManager.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Mp3.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SoundClass.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Time\Timer.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EngineApi\PhysicsParams.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EngineApi\GraphicsParams.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Engine\CEngine.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Common\DirectX.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Geometry\GeometryUtils.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Common\GeneralUtils.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Math\MathUtils.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Math\SIMDConversionUtils.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Math\CMath.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EngineApi\IRigidActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EngineApi\ISkeletalActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="x64\Debug\AssetLoader.obj" />
+    <Object Include="x64\Debug\Camera.obj" />
+    <Object Include="x64\Debug\CApp.obj" />
+    <Object Include="x64\Debug\CGraphics.obj" />
+    <Object Include="x64\Debug\CInput.obj" />
+    <Object Include="x64\Debug\CRenderer.obj" />
+    <Object Include="x64\Debug\DDSTextureLoader.obj" />
+    <Object Include="x64\Debug\DXBuffer.obj" />
+    <Object Include="x64\Debug\DXShaderResourceView.obj" />
+    <Object Include="x64\Debug\Entity.obj" />
+    <Object Include="x64\Debug\GameAssets.obj" />
+    <Object Include="x64\Debug\GeometryCreator.obj" />
+    <Object Include="x64\Debug\GraphicsHelper.obj" />
+    <Object Include="x64\Debug\GraphicsMaths.obj" />
+    <Object Include="x64\Debug\IndexBuffer.obj" />
+    <Object Include="x64\Debug\MeshDrawer.obj" />
+    <Object Include="x64\Debug\Mp3.obj" />
+    <Object Include="x64\Debug\pch.obj" />
+    <Object Include="x64\Debug\PhysXManager.obj" />
+    <Object Include="x64\Debug\PixelShader.obj" />
+    <Object Include="x64\Debug\PxTkBmpLoader.obj" />
+    <Object Include="x64\Debug\PxTkFPS.obj" />
+    <Object Include="x64\Debug\PxTkMatrixUtils.obj" />
+    <Object Include="x64\Debug\PxTkRandom.obj" />
+    <Object Include="x64\Debug\PxTkStream.obj" />
+    <Object Include="x64\Debug\RigidEntity.obj" />
+    <Object Include="x64\Debug\SamplerState.obj" />
+    <Object Include="x64\Debug\SkeletalEntity.obj" />
+    <Object Include="x64\Debug\Sky.obj" />
+    <Object Include="x64\Debug\SoundClass.obj" />
+    <Object Include="x64\Debug\Timer.obj" />
+    <Object Include="x64\Debug\VertexShader.obj" />
+    <Object Include="x64\Debug\WICTextureLoader.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="x64\Debug\AssetLoader.sbr" />
+    <None Include="x64\Debug\Camera.sbr" />
+    <None Include="x64\Debug\CApp.sbr" />
+    <None Include="x64\Debug\CGraphics.sbr" />
+    <None Include="x64\Debug\CInput.sbr" />
+    <None Include="x64\Debug\CRenderer.sbr" />
+    <None Include="x64\Debug\DDSTextureLoader.sbr" />
+    <None Include="x64\Debug\DXBuffer.sbr" />
+    <None Include="x64\Debug\DXShaderResourceView.sbr" />
+    <None Include="x64\Debug\Entity.sbr" />
+    <None Include="x64\Debug\GameAssets.sbr" />
+    <None Include="x64\Debug\GeometryCreator.sbr" />
+    <None Include="x64\Debug\GraphicsHelper.sbr" />
+    <None Include="x64\Debug\GraphicsMaths.sbr" />
+    <None Include="x64\Debug\IndexBuffer.sbr" />
+    <None Include="x64\Debug\MeshDrawer.sbr" />
+    <None Include="x64\Debug\Mp3.sbr" />
+    <None Include="x64\Debug\pch.sbr" />
+    <None Include="x64\Debug\PhysXManager.sbr" />
+    <None Include="x64\Debug\PixelShader.sbr" />
+    <None Include="x64\Debug\PxTkBmpLoader.sbr" />
+    <None Include="x64\Debug\PxTkFPS.sbr" />
+    <None Include="x64\Debug\PxTkMatrixUtils.sbr" />
+    <None Include="x64\Debug\PxTkRandom.sbr" />
+    <None Include="x64\Debug\PxTkStream.sbr" />
+    <None Include="x64\Debug\RigidEntity.sbr" />
+    <None Include="x64\Debug\SamplerState.sbr" />
+    <None Include="x64\Debug\SkeletalEntity.sbr" />
+    <None Include="x64\Debug\Sky.sbr" />
+    <None Include="x64\Debug\SoundClass.sbr" />
+    <None Include="x64\Debug\Timer.sbr" />
+    <None Include="x64\Debug\vc120.idb" />
+    <None Include="x64\Debug\vc120.pdb" />
+    <None Include="x64\Debug\VertexShader.sbr" />
+    <None Include="x64\Debug\WICTextureLoader.sbr" />
+    <None Include="Debug\ClearEngine.tlog\unsuccessfulbuild" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Debug\ClearEngine.Build.CppClean.log" />
+    <Text Include="x64\Debug\ClearEngine.log" />
+    <Text Include="x64\Debug\Graphics.log" />
+    <Text Include="Debug\ClearEngine.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Actors\CActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Actors\RigidActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Actors\SkeletalActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DataStructures\CNode.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Geometry\GeometryCreator.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Actors\GraphicsActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Actors\RigidGraphicsActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Actors\SkeletalGraphicsActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Camera\Camera.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Camera\Frustum.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Rendering\CGraphics.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Rendering\CRenderer.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Rendering\GraphicsHelper.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Rendering\MeshDrawer.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Rendering\Sky.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Resources\DXBuffer.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Resources\DXShaderResourceView.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Resources\IndexBuffer.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Resources\PixelShader.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Resources\SamplerState.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Resources\VertexShader.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\SceneGraph\ContainerGNode.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\SceneGraph\DataGNode..cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\SceneGraph\GNode.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\CInput.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lights\DirectionalLight.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lights\Light.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lights\PointLight.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lights\SpotLight.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loading\Textures\DDSTextureLoader.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loading\Textures\pch.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loading\Textures\WICTextureLoader.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loading\AssetLoader.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loading\AssetLoadingUtil.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loading\GameAssets.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Toolkit\PxTkBmpLoader.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Toolkit\PxTkFPS.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Toolkit\PxTkMatrixUtils.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Toolkit\PxTkRandom.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Toolkit\PxTkStream.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\PhysicsManager.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Mp3.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\SoundClass.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Time\Timer.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\MathUtils.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Geometry\GeometryUtils.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\CEngine.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Source\Graphics\Shaders\LightUtil.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\Material.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\Mesh.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\ParticleShaders.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\Sky.fx" />
+  </ItemGroup>
+</Project>

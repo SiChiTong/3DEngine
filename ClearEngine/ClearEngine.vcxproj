@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Actors\CActor.h" />
+    <ClInclude Include="Include\Actors\RigidActor.h" />
+    <ClInclude Include="Include\Actors\SkeletalActor.h" />
+    <ClInclude Include="Include\EngineApi\IRigidActor.h" />
+    <ClInclude Include="Include\EngineApi\ISkeletalActor.h" />
+    <ClInclude Include="Include\Engine\CEngine.h" />
+    <ClInclude Include="Include\DataStructures\CNode.h" />
+    <ClInclude Include="Include\Common\DirectX.h" />
+    <ClInclude Include="Include\Geometry\GeometryCreator.h" />
+    <ClInclude Include="Include\Geometry\GeometryTypes.h" />
+    <ClInclude Include="Include\Geometry\Models.h" />
+    <ClInclude Include="Include\EngineApi\GraphicsParams.h" />
+    <ClInclude Include="Include\Graphics\Actors\GraphicsActor.h" />
+    <ClInclude Include="Include\Graphics\Actors\RigidGraphicsActor.h" />
+    <ClInclude Include="Include\Graphics\Actors\SkeletalGraphicsActor.h" />
+    <ClInclude Include="Include\Graphics\Camera\Camera.h" />
+    <ClInclude Include="Include\Graphics\Camera\Frustum.h" />
+    <ClInclude Include="Include\Graphics\Rendering\CGraphics.h" />
+    <ClInclude Include="Include\Graphics\Rendering\CRenderer.h" />
+    <ClInclude Include="Include\Graphics\Rendering\GraphicsHelper.h" />
+    <ClInclude Include="Include\Graphics\Rendering\GraphicsTypes.h" />
+    <ClInclude Include="Include\Graphics\Rendering\MeshDrawer.h" />
+    <ClInclude Include="Include\Graphics\Rendering\ShaderLights.h" />
+    <ClInclude Include="Include\Graphics\Rendering\Sky.h" />
+    <ClInclude Include="Include\Graphics\Resources\ConstantBuffer.h" />
+    <ClInclude Include="Include\Graphics\Resources\DXBuffer.h" />
+    <ClInclude Include="Include\Graphics\Resources\DXShaderResourceView.h" />
+    <ClInclude Include="Include\Graphics\Resources\IndexBuffer.h" />
+    <ClInclude Include="Include\Graphics\Resources\PixelShader.h" />
+    <ClInclude Include="Include\Graphics\Resources\SamplerState.h" />
+    <ClInclude Include="Include\Graphics\Resources\StructuredBuffer.h" />
+    <ClInclude Include="Include\Graphics\Resources\VertexBuffer.h" />
+    <ClInclude Include="Include\Graphics\Resources\VertexShader.h" />
+    <ClInclude Include="Include\Graphics\SceneGraph\ContainerGNode.h" />
+    <ClInclude Include="Include\Graphics\SceneGraph\DataGNode.h" />
+    <ClInclude Include="Include\Graphics\SceneGraph\GNode.h" />
+    <ClInclude Include="Include\Input\CInput.h" />
+    <ClInclude Include="Include\Lights\DirectionalLight.h" />
+    <ClInclude Include="Include\Lights\Light.h" />
+    <ClInclude Include="Include\Lights\PointLight.h" />
+    <ClInclude Include="Include\Lights\SpotLight.h" />
+    <ClInclude Include="Include\Loading\AssetLoader.h" />
+    <ClInclude Include="Include\Loading\AssetLoadingUtil.h" />
+    <ClInclude Include="Include\Loading\GameAssets.h" />
+    <ClInclude Include="Include\Loading\Textures\dds.h" />
+    <ClInclude Include="Include\Loading\Textures\DDSTextureLoader.h" />
+    <ClInclude Include="Include\Loading\Textures\pch.h" />
+    <ClInclude Include="Include\Loading\Textures\PlatformHelpers.h" />
+    <ClInclude Include="Include\Loading\Textures\resource.h" />
+    <ClInclude Include="Include\Loading\Textures\WICTextureLoader.h" />
+    <ClInclude Include="Include\EngineApi\PhysicsParams.h" />
+    <ClInclude Include="Include\Math\CMath.h" />
+    <ClInclude Include="Include\Physics\CPhysics.h" />
+    <ClInclude Include="Include\Physics\PhysicsManager.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxTkBmpLoader.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxTkFPS.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxTkMatrixUtils.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxTkNamespaceMangle.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxTkRandom.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxTkStream.h" />
+    <ClInclude Include="Include\Physics\Toolkit\PxToolkit.h" />
+    <ClInclude Include="Include\Sound\Mp3.h" />
+    <ClInclude Include="Include\Sound\SoundClass.h" />
+    <ClInclude Include="Include\Time\Timer.h" />
+    <ClInclude Include="Include\Common\GeneralUtils.h" />
+    <ClInclude Include="Include\Geometry\GeometryUtils.h" />
+    <ClInclude Include="Include\Math\MathUtils.h" />
+    <ClInclude Include="Include\Math\SIMDConversionUtils.h" />
+    <ClInclude Include="Source\Input\CInput.h" />
+    <ClInclude Include="Source\DirectX.h" />
+    <ClInclude Include="Source\GraphicsParams.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="x64\Debug\AssetLoader.obj" />
+    <Object Include="x64\Debug\Camera.obj" />
+    <Object Include="x64\Debug\CApp.obj" />
+    <Object Include="x64\Debug\CGraphics.obj" />
+    <Object Include="x64\Debug\CInput.obj" />
+    <Object Include="x64\Debug\CRenderer.obj" />
+    <Object Include="x64\Debug\DDSTextureLoader.obj" />
+    <Object Include="x64\Debug\DXBuffer.obj" />
+    <Object Include="x64\Debug\DXShaderResourceView.obj" />
+    <Object Include="x64\Debug\Entity.obj" />
+    <Object Include="x64\Debug\GameAssets.obj" />
+    <Object Include="x64\Debug\GeometryCreator.obj" />
+    <Object Include="x64\Debug\GraphicsHelper.obj" />
+    <Object Include="x64\Debug\GraphicsMaths.obj" />
+    <Object Include="x64\Debug\IndexBuffer.obj" />
+    <Object Include="x64\Debug\MeshDrawer.obj" />
+    <Object Include="x64\Debug\Mp3.obj" />
+    <Object Include="x64\Debug\pch.obj" />
+    <Object Include="x64\Debug\PhysXManager.obj" />
+    <Object Include="x64\Debug\PixelShader.obj" />
+    <Object Include="x64\Debug\PxTkBmpLoader.obj" />
+    <Object Include="x64\Debug\PxTkFPS.obj" />
+    <Object Include="x64\Debug\PxTkMatrixUtils.obj" />
+    <Object Include="x64\Debug\PxTkRandom.obj" />
+    <Object Include="x64\Debug\PxTkStream.obj" />
+    <Object Include="x64\Debug\RigidEntity.obj" />
+    <Object Include="x64\Debug\SamplerState.obj" />
+    <Object Include="x64\Debug\SkeletalEntity.obj" />
+    <Object Include="x64\Debug\Sky.obj" />
+    <Object Include="x64\Debug\SoundClass.obj" />
+    <Object Include="x64\Debug\Timer.obj" />
+    <Object Include="x64\Debug\VertexShader.obj" />
+    <Object Include="x64\Debug\WICTextureLoader.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\ClearEngine.tlog\unsuccessfulbuild" />
+    <None Include="x64\Debug\AssetLoader.sbr" />
+    <None Include="x64\Debug\Camera.sbr" />
+    <None Include="x64\Debug\CApp.sbr" />
+    <None Include="x64\Debug\CGraphics.sbr" />
+    <None Include="x64\Debug\CInput.sbr" />
+    <None Include="x64\Debug\CRenderer.sbr" />
+    <None Include="x64\Debug\DDSTextureLoader.sbr" />
+    <None Include="x64\Debug\DXBuffer.sbr" />
+    <None Include="x64\Debug\DXShaderResourceView.sbr" />
+    <None Include="x64\Debug\Entity.sbr" />
+    <None Include="x64\Debug\GameAssets.sbr" />
+    <None Include="x64\Debug\GeometryCreator.sbr" />
+    <None Include="x64\Debug\GraphicsHelper.sbr" />
+    <None Include="x64\Debug\GraphicsMaths.sbr" />
+    <None Include="x64\Debug\IndexBuffer.sbr" />
+    <None Include="x64\Debug\MeshDrawer.sbr" />
+    <None Include="x64\Debug\Mp3.sbr" />
+    <None Include="x64\Debug\pch.sbr" />
+    <None Include="x64\Debug\PhysXManager.sbr" />
+    <None Include="x64\Debug\PixelShader.sbr" />
+    <None Include="x64\Debug\PxTkBmpLoader.sbr" />
+    <None Include="x64\Debug\PxTkFPS.sbr" />
+    <None Include="x64\Debug\PxTkMatrixUtils.sbr" />
+    <None Include="x64\Debug\PxTkRandom.sbr" />
+    <None Include="x64\Debug\PxTkStream.sbr" />
+    <None Include="x64\Debug\RigidEntity.sbr" />
+    <None Include="x64\Debug\SamplerState.sbr" />
+    <None Include="x64\Debug\SkeletalEntity.sbr" />
+    <None Include="x64\Debug\Sky.sbr" />
+    <None Include="x64\Debug\SoundClass.sbr" />
+    <None Include="x64\Debug\Timer.sbr" />
+    <None Include="x64\Debug\vc120.idb" />
+    <None Include="x64\Debug\vc120.pdb" />
+    <None Include="x64\Debug\VertexShader.sbr" />
+    <None Include="x64\Debug\WICTextureLoader.sbr" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\ClearEngine.log" />
+    <Text Include="x64\Debug\ClearEngine.Build.CppClean.log" />
+    <Text Include="x64\Debug\ClearEngine.log" />
+    <Text Include="x64\Debug\Graphics.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Actors\CActor.cpp" />
+    <ClCompile Include="Source\Actors\RigidActor.cpp" />
+    <ClCompile Include="Source\Actors\SkeletalActor.cpp" />
+    <ClCompile Include="Source\Engine\CEngine.cpp" />
+    <ClCompile Include="Source\DataStructures\CNode.cpp" />
+    <ClCompile Include="Source\Geometry\GeometryCreator.cpp" />
+    <ClCompile Include="Source\Graphics\Actors\GraphicsActor.cpp" />
+    <ClCompile Include="Source\Graphics\Actors\RigidGraphicsActor.cpp" />
+    <ClCompile Include="Source\Graphics\Actors\SkeletalGraphicsActor.cpp" />
+    <ClCompile Include="Source\Graphics\Camera\Camera.cpp" />
+    <ClCompile Include="Source\Graphics\Camera\Frustum.cpp" />
+    <ClCompile Include="Source\Graphics\Rendering\CGraphics.cpp" />
+    <ClCompile Include="Source\Graphics\Rendering\CRenderer.cpp" />
+    <ClCompile Include="Source\Graphics\Rendering\GraphicsHelper.cpp" />
+    <ClCompile Include="Source\Graphics\Rendering\MeshDrawer.cpp" />
+    <ClCompile Include="Source\Graphics\Rendering\Sky.cpp" />
+    <ClCompile Include="Source\Graphics\Resources\DXBuffer.cpp" />
+    <ClCompile Include="Source\Graphics\Resources\DXShaderResourceView.cpp" />
+    <ClCompile Include="Source\Graphics\Resources\IndexBuffer.cpp" />
+    <ClCompile Include="Source\Graphics\Resources\PixelShader.cpp" />
+    <ClCompile Include="Source\Graphics\Resources\SamplerState.cpp" />
+    <ClCompile Include="Source\Graphics\Resources\VertexShader.cpp" />
+    <ClCompile Include="Source\Graphics\SceneGraph\ContainerGNode.cpp" />
+    <ClCompile Include="Source\Graphics\SceneGraph\DataGNode..cpp" />
+    <ClCompile Include="Source\Graphics\SceneGraph\GNode.cpp" />
+    <ClCompile Include="Source\Input\CInput.cpp" />
+    <ClCompile Include="Source\Lights\DirectionalLight.cpp" />
+    <ClCompile Include="Source\Lights\Light.cpp" />
+    <ClCompile Include="Source\Lights\PointLight.cpp" />
+    <ClCompile Include="Source\Lights\SpotLight.cpp" />
+    <ClCompile Include="Source\Loading\AssetLoader.cpp" />
+    <ClCompile Include="Source\Loading\AssetLoadingUtil.cpp" />
+    <ClCompile Include="Source\Loading\GameAssets.cpp" />
+    <ClCompile Include="Source\Loading\Textures\DDSTextureLoader.cpp" />
+    <ClCompile Include="Source\Loading\Textures\pch.cpp" />
+    <ClCompile Include="Source\Loading\Textures\WICTextureLoader.cpp" />
+    <ClCompile Include="Source\Physics\PhysicsManager.cpp" />
+    <ClCompile Include="Source\Physics\Toolkit\PxTkBmpLoader.cpp" />
+    <ClCompile Include="Source\Physics\Toolkit\PxTkFPS.cpp" />
+    <ClCompile Include="Source\Physics\Toolkit\PxTkMatrixUtils.cpp" />
+    <ClCompile Include="Source\Physics\Toolkit\PxTkRandom.cpp" />
+    <ClCompile Include="Source\Physics\Toolkit\PxTkStream.cpp" />
+    <ClCompile Include="Source\Sound\Mp3.cpp" />
+    <ClCompile Include="Source\Sound\SoundClass.cpp" />
+    <ClCompile Include="Source\Time\Timer.cpp" />
+    <ClCompile Include="Source\Geometry\GeometryUtils.cpp" />
+    <ClCompile Include="Source\Math\MathUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Source\Graphics\Shaders\LightUtil.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\Material.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\Mesh.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\ParticleShaders.fx" />
+    <FxCompile Include="Source\Graphics\Shaders\Sky.fx" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BFBBD87D-B188-45AE-A104-46E4F93D8FB9}</ProjectGuid>
+    <RootNamespace>Graphics</RootNamespace>
+    <ProjectName>ClearEngine</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\Aidan\Documents\PhysX\Include;C:\Users\Aidan\Documents\assimp\include\assimp;$(IncludePath)</IncludePath>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>C:\Users\Aidan\Documents\PhysX\Include;C:\Users\Aidan\Documents\assimp\include\assimp;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Aidan\Documents\PhysX\Include;C:\Users\Aidan\Documents\assimp\include\assimp;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\Aidan\Documents\PhysX\Include;C:\Users\Aidan\Documents\assimp\include\assimp;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>././;$(PHYSX)\Include;$(PHYSX)\Source\foundation\include;$(ASSIMP)\include\assimp;Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>././;$(PHYSX)\Include;$(PHYSX)\Source\foundation\include;$(ASSIMP)\include\assimp;Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Aidan\Documents\PhysX\Lib\win64;C:\Program Files\boost\lib\x64;C:\Program Files\assimp\lib64</AdditionalLibraryDirectories>
+    </Link>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+      <EntryPointName />
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>././;C:\Program Files\boost;C:\Users\Aidan\Documents\PhysX\Include;C:\Users\Aidan\Documents\PhysX\Source\foundation\include;C:\Program Files\assimp\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\Aidan\Documents\PhysX\Lib\win64;C:\Program Files\boost\lib\x64;C:\Program Files\assimp\lib64</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
