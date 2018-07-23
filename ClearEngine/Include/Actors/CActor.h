@@ -2,7 +2,7 @@
 
 #include <map>
 #include <algorithm>
-#include "Common/DirectX.h"
+#include "Math/CMath.h"
 
 typedef enum CActorType
 {
