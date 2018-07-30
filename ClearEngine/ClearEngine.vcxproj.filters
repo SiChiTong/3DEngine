@@ -218,7 +218,7 @@
     <ClInclude Include="Include\EngineApi\ISkeletalActor.h">
       <Filter>Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\EngineApi\RigidActorWrapper.h">
+    <ClInclude Include="Include\Actors\EngineRigidActor.h">
       <Filter>Files</Filter>
     </ClInclude>
   </ItemGroup>
