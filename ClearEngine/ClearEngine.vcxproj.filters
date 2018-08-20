@@ -212,12 +212,6 @@
     <ClInclude Include="Include\Math\CMath.h">
       <Filter>Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\EngineApi\IRigidActor.h">
-      <Filter>Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\EngineApi\ISkeletalActor.h">
-      <Filter>Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Actors\EngineRigidActor.h">
       <Filter>Files</Filter>
     </ClInclude>
@@ -443,7 +437,7 @@
     <ClCompile Include="Source\Engine\CEngine.cpp">
       <Filter>Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EngineApi\RigidActorWrapper.cpp">
+    <ClCompile Include="Source\Actors\EngineRigidActor.cpp">
       <Filter>Files</Filter>
     </ClCompile>
   </ItemGroup>

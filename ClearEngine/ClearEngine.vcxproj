@@ -22,8 +22,6 @@
     <ClInclude Include="Include\Actors\CActor.h" />
     <ClInclude Include="Include\Actors\RigidActor.h" />
     <ClInclude Include="Include\Actors\SkeletalActor.h" />
-    <ClInclude Include="Include\EngineApi\IRigidActor.h" />
-    <ClInclude Include="Include\EngineApi\ISkeletalActor.h" />
     <ClInclude Include="Include\Actors\EngineRigidActor.h" />
     <ClInclude Include="Include\Engine\CEngine.h" />
     <ClInclude Include="Include\DataStructures\CNode.h" />
@@ -173,9 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Actors\CActor.cpp" />
+    <ClCompile Include="Source\Actors\EngineRigidActor.cpp" />
     <ClCompile Include="Source\Actors\RigidActor.cpp" />
     <ClCompile Include="Source\Actors\SkeletalActor.cpp" />
-    <ClCompile Include="Source\EngineApi\RigidActorWrapper.cpp" />
     <ClCompile Include="Source\Engine\CEngine.cpp" />
     <ClCompile Include="Source\DataStructures\CNode.cpp" />
     <ClCompile Include="Source\Geometry\GeometryCreator.cpp" />
