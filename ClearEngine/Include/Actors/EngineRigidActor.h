@@ -8,8 +8,9 @@
 class EngineRigidActor 
 {
 public:
-	EngineRigidActor(RigidActor* actor, RigidModel* model, physx::PxRigidActor* physicsActor = nullptr);
+	EngineRigidActor(RigidActor* actor, RigidGraphicsActor* graphicsActor, physx::PxRigidActor* physicsActor = nullptr);
 	~EngineRigidActor();
+	void UpdatePhysicsActor(double time);
 	void Update(double time);
 	RigidActor* GetActor();
 	RigidGraphicsActor* GetGraphicsActor();

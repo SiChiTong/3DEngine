@@ -185,12 +185,6 @@
     <ClInclude Include="Include\Time\Timer.h">
       <Filter>Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\EngineApi\PhysicsParams.h">
-      <Filter>Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\EngineApi\GraphicsParams.h">
-      <Filter>Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Engine\CEngine.h">
       <Filter>Files</Filter>
     </ClInclude>
@@ -213,6 +207,15 @@
       <Filter>Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\Actors\EngineRigidActor.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EngineApi\APITypes.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Common\CWin.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EngineApi\PhysicsShape.h">
       <Filter>Files</Filter>
     </ClInclude>
   </ItemGroup>

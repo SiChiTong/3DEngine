@@ -1,10 +1,10 @@
 #pragma once
 
+#include "CWin.h"
 #include "Math/CMath.h"
 //All core DirectX related stuff that some classes may need to use.
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
-#pragma comment(lib, "windowscodecs.lib")
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "dsound.lib")
 //For input.
@@ -13,7 +13,6 @@
 #pragma comment(lib, "XInput.lib")  
                     
 #include <dinput.h>
-#include <windows.h>
 #include <d3d11.h>
 #include <d3d11_1.h>
 #include <dxgi.h>

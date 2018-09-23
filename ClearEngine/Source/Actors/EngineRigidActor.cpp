@@ -4,18 +4,28 @@
 using namespace DirectX;
 using namespace physx;
 
-EngineRigidActor::EngineRigidActor(RigidActor* rigidActor, RigidModel* model, physx::PxRigidActor* physicsActor)
-	: CActor(name, scale, rotation, position), model(model), physicsActor(physicsActor)
+EngineRigidActor::EngineRigidActor(RigidActor* rigidActor, RigidGraphicsActor* graphicsActor, physx::PxRigidActor* physicsActor)
 {
 	if (physicsActor)
 	{
-		physicsActor->setGlobalPose(CreatePxTransform(CreatePxQuat(rotation), CreatePxVec3(position)));
+		physicsActor->setGlobalPose(CreatePxTransform(CreatePxQuat(graphicsActor->GetRotation()), CreatePxVec3(graphicsActor->GetPosition())));
 	}
 }
 
 EngineRigidActor::~EngineRigidActor()
 {
 	physicsActor->release();
+	delete graphicsActor;
+}
+
+void EngineRigidActor::UpdatePhysicsActor(double time)
+{
+	if (physicsActor)
+	{
+		//Update the physics engine actor position and rotation.
+		physicsActor->setGlobalPose(CreatePxTransform(CreatePxQuat(actor->GetRotation()), physicsActor->getGlobalPose().p));
+		physicsActor->setGlobalPose(CreatePxTransform(physicsActor->getGlobalPose().q, CreatePxVec3(actor->GetPosition())));
+	}
 }
 
 void EngineRigidActor::Update(double time)
@@ -23,37 +33,27 @@ void EngineRigidActor::Update(double time)
 	if (physicsActor)
 	{
 		//Update the engine actor's rotation and position to equal the physics engine actor.
-		rotation = ConvPxQuat(physicsActor->getGlobalPose().q);
-		position = ConvPxVec3(physicsActor->getGlobalPose().p);
+		actor->SetRotation(ConvPxQuat(physicsActor->getGlobalPose().q));
+		actor->SetPosition(ConvPxVec3(physicsActor->getGlobalPose().p));
 	}
-	XMMATRIX xmWorldMatrix = XMMatrixScaling(scale.x, scale.y, scale.z) * XMMatrixRotationQuaternion(FV(rotation)) * XMMatrixTranslation(position.x, position.y, position.z);
+	XMFLOAT3 scale = actor->GetScale();
+	XMFLOAT3 position = actor->GetPosition();
+	XMMATRIX xmWorldMatrix = XMMatrixScaling(scale.x, scale.y, scale.z) * XMMatrixRotationQuaternion(FV(actor->GetRotation())) * XMMatrixTranslation(position.x, position.y, position.z);
 	graphicsActor->SetWorldMatrix(MF(xmWorldMatrix));
-	this->CActor::Update(time);
 }
 
-PxEngineRigidActor* EngineRigidActor::GetPhysicsActor()
+RigidActor* EngineRigidActor::GetActor()
+{
+
+}
+
+PxRigidActor* EngineRigidActor::GetPhysicsActor()
 {
 	return physicsActor;
 }
 
-//Changing scale of a rigid actor is disallowed to prevent any mismatch between graphics and physics.
-void EngineRigidActor::SetScale(DirectX::XMFLOAT3 scale) {}
-
-void EngineRigidActor::SetRotation(DirectX::XMFLOAT4 rotation)
+RigidGraphicsActor* EngineRigidActor::GetGraphicsActor()
 {
-	this->CActor::SetRotation(rotation);
-	if (physicsActor)
-	{
-		physicsActor->setGlobalPose(CreatePxTransform(CreatePxQuat(rotation), physicsActor->getGlobalPose().p));
-	}
-}
-
-void EngineRigidActor::SetPosition(DirectX::XMFLOAT3 position)
-{
-	this->CActor::SetPosition(position);
-	if (physicsActor)
-	{
-		physicsActor->setGlobalPose(CreatePxTransform(physicsActor->getGlobalPose().q, CreatePxVec3(position)));
-	}
+	return graphicsActor;
 }
 

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <map>
-#include <algorithm>
 #include "Math/CMath.h"
 
 typedef enum CActorType
@@ -13,7 +11,7 @@ typedef enum CActorType
 class CActor 
 {
 	public:
-		~CActor();
+		virtual ~CActor();
 		virtual void Update(double time);
 		std::wstring GetName();
 		virtual CActorType GetType() = 0;

@@ -1,6 +1,5 @@
-#include "Geometry/GeometryCreator.h"
 #include "Math/SIMDConversionUtils.h"
-#include "Math/MathUtils.h"
+#include "Geometry/GeometryCreator.h"
 #include "Graphics/Resources/VertexBuffer.h"
 #include "Graphics/Resources/IndexBuffer.h"
 #include "Graphics/Resources/StructuredBuffer.h"
@@ -90,9 +89,9 @@ void GeometryCreator::LoadTerrainFromBitmap(HeightMapInfo& hmInfo, RigidModel& m
 	model.subsets.push_back(subset);
 
 	//Compute normals and tangents
-	MathUtils::ComputeRigidModelData(model);
+	GeometryUtils::ComputeRigidModelData(model);
 
-	ModelUtil::CreateRigidModelObjects(device, model);
+	GeometryUtils::CreateRigidModelObjects(device, model);
 }
 
 void GeometryCreator::LoadHeightMap(std::wstring fileName, HeightMapInfo &hmInfo)
@@ -264,9 +263,9 @@ void GeometryCreator::CreateCube(RigidModel& model)
 	model.subsets.push_back(subset);
 
 	//Compute normals and tangents
-	MathUtils::ComputeRigidModelData(model);
+	GeometryUtils::ComputeRigidModelData(model);
 
-	ModelUtil::CreateRigidModelObjects(device, model);
+	GeometryUtils::CreateRigidModelObjects(device, model);
 }
 
 //Creates a unit cube
@@ -332,7 +331,7 @@ void GeometryCreator::CreateSimpleCube(RigidModel& model)
 	model.subsets.push_back(subset);
 
 	//Compute normals and tangents
-	MathUtils::ComputeRigidModelData(model);
+	GeometryUtils::ComputeRigidModelData(model);
 
 	GeometryUtils::CreateRigidModelObjects(device, model);
 }
@@ -373,9 +372,9 @@ void GeometryCreator::CreatePlane(RigidModel& model)
 	model.subsets.push_back(subset);
 
 	//Compute normals and tangents
-	MathUtils::ComputeRigidModelData(model);
+	GeometryUtils::ComputeRigidModelData(model);
 
-	ModelUtil::CreateRigidModelObjects(device, model);
+	GeometryUtils::CreateRigidModelObjects(device, model);
 }
 
 //Creates a unit sphere
@@ -515,9 +514,9 @@ void GeometryCreator::CreateSphere(RigidModel& model)
 	model.subsets.push_back(subset);
 
 	//Compute normals and tangents
-	MathUtils::ComputeRigidModelData(model);
+	GeometryUtils::ComputeRigidModelData(model);
 
-	ModelUtil::CreateRigidModelObjects(device, model);
+	GeometryUtils::CreateRigidModelObjects(device, model);
 }
 
 

@@ -1,17 +1,10 @@
 #pragma once
 
-#include <vector>
-#include <istream>
-#include <map>
-#include <fstream>
-#include <iostream>
 #include "Common/DirectX.h"
 #include "Loading/GameAssets.h"
 #include "Loading/Textures/DDSTextureLoader.h"
 #include "Geometry/Models.h"
 #include "Graphics/Rendering/GraphicsTypes.h"
-#include "Common/GeneralUtils.h"
-#include "Utils/GeometryUtils.h"
 
 
 class GeometryCreator

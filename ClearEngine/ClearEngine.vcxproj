@@ -23,13 +23,15 @@
     <ClInclude Include="Include\Actors\RigidActor.h" />
     <ClInclude Include="Include\Actors\SkeletalActor.h" />
     <ClInclude Include="Include\Actors\EngineRigidActor.h" />
+    <ClInclude Include="Include\Common\CWin.h" />
+    <ClInclude Include="Include\EngineApi\APITypes.h" />
+    <ClInclude Include="Include\EngineApi\PhysicsShape.h" />
     <ClInclude Include="Include\Engine\CEngine.h" />
     <ClInclude Include="Include\DataStructures\CNode.h" />
     <ClInclude Include="Include\Common\DirectX.h" />
     <ClInclude Include="Include\Geometry\GeometryCreator.h" />
     <ClInclude Include="Include\Geometry\GeometryTypes.h" />
     <ClInclude Include="Include\Geometry\Models.h" />
-    <ClInclude Include="Include\EngineApi\GraphicsParams.h" />
     <ClInclude Include="Include\Graphics\Actors\GraphicsActor.h" />
     <ClInclude Include="Include\Graphics\Actors\RigidGraphicsActor.h" />
     <ClInclude Include="Include\Graphics\Actors\SkeletalGraphicsActor.h" />
@@ -68,7 +70,6 @@
     <ClInclude Include="Include\Loading\Textures\PlatformHelpers.h" />
     <ClInclude Include="Include\Loading\Textures\resource.h" />
     <ClInclude Include="Include\Loading\Textures\WICTextureLoader.h" />
-    <ClInclude Include="Include\EngineApi\PhysicsParams.h" />
     <ClInclude Include="Include\Math\CMath.h" />
     <ClInclude Include="Include\Physics\CPhysics.h" />
     <ClInclude Include="Include\Physics\PhysicsManager.h" />

@@ -21,7 +21,7 @@ class GraphicsActor
 {
 	friend class CRenderer;
 	public:
-		~GraphicsActor();
+		virtual ~GraphicsActor();
 		virtual GraphicsActorType GetType() = 0;
 		virtual void Update(double time);
 		void SetScale(DirectX::XMFLOAT3 scale);
