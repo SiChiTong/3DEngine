@@ -12,7 +12,7 @@ RigidGraphicsActor::RigidGraphicsActor(RigidModel* model, DirectX::XMFLOAT3 scal
 
 RigidGraphicsActor::~RigidGraphicsActor()
 {
-	GeneralUtils::DeleteAllVectorPointers<DrawableEntity>(drawableEntities);
+	GeneralUtils::RemoveAllVectorPointers<DrawableEntity>(drawableEntities);
 }
 
 void RigidGraphicsActor::Update(double time)
