@@ -218,6 +218,9 @@
     <ClInclude Include="Include\EngineApi\PhysicsShape.h">
       <Filter>Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\EngineApi\CApp.h">
+      <Filter>Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Object Include="x64\Debug\AssetLoader.obj" />
@@ -441,6 +444,9 @@
       <Filter>Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Actors\EngineRigidActor.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\EngineApi\CApp.cpp">
       <Filter>Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,28 +1,17 @@
-#ifndef App_H
-#define App_H
+#pragma once
 
-#pragma comment(lib,"ClearEngine.lib")
+#include <EngineAPI/CApp.h>
 
-#include <Math/Cmath.h>
-#include "AssetLoadingData.h"
-
-class App : public CEngine
+class App
 {
 public:
-	App(GraphicsParams graphicsParams, PhysicsParams physicsParams);
+	App(EngineParams engineParams);
 	~App();
-
-protected:
 	void Update(double frameTime, int fps);
-	void Render(double frameTime, int fps);
 
 private:
 	void LoadAssets();
 	void CreateActors();
 	void DetectInput(double frameTime, int fps);
-	RigidActor* level;
-	SkeletalActor* vil;
 	bool usePhysics;
 };
-
-#endif

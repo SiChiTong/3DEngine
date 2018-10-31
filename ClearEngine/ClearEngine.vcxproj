@@ -25,6 +25,7 @@
     <ClInclude Include="Include\Actors\EngineRigidActor.h" />
     <ClInclude Include="Include\Common\CWin.h" />
     <ClInclude Include="Include\EngineApi\APITypes.h" />
+    <ClInclude Include="Include\EngineApi\CApp.h" />
     <ClInclude Include="Include\EngineApi\PhysicsShape.h" />
     <ClInclude Include="Include\Engine\CEngine.h" />
     <ClInclude Include="Include\DataStructures\CNode.h" />
@@ -171,6 +172,7 @@
     <Text Include="x64\Debug\Graphics.log" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Include\EngineApi\CApp.cpp" />
     <ClCompile Include="Source\Actors\CActor.cpp" />
     <ClCompile Include="Source\Actors\EngineRigidActor.cpp" />
     <ClCompile Include="Source\Actors\RigidActor.cpp" />

@@ -1,6 +1,15 @@
 #pragma once
+
 #include <DirectXMath.h>
 #include <windows.h>
+
+struct ProgramParams
+{
+	HINSTANCE hInstance;
+	HINSTANCE hPrevInstance;
+	LPSTR     lpCmdLine;
+	int nCmdShow;
+};
 
 struct GraphicsParams
 {
@@ -41,4 +50,11 @@ struct PhysicsParams
 		gravity = DirectX::XMFLOAT3(0.0f, -9.81f, 0.0f);
 		enableCCD = true;
 	}
+};
+
+struct EngineParams
+{
+	ProgramParams programParams;
+	GraphicsParams graphicsParams;
+	PhysicsParams physicsParams;
 };

@@ -23,10 +23,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h">
+    <ClInclude Include="AssetLoadingData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AssetLoadingData.h">
+    <ClInclude Include="App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

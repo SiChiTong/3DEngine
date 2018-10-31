@@ -1,12 +1,16 @@
 #include "App.h"
+#include <windows.h>
 
 #ifdef _MSC_VER
 #    pragma comment(linker, "/subsystem:windows /ENTRY:mainCRTStartup")
 #endif
 
-int main()
+int main(HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR     lpCmdLine,
+	int nCmdShow)
 {
-	App::GraphicsParams graphicsParams;
+	GraphicsParams graphicsParams;
 	graphicsParams.animationPath = L"../Assets/Animations/";
 	graphicsParams.appName = L"Demo";
 	graphicsParams.modelPath = L"../Assets/Models/";
@@ -16,7 +20,7 @@ int main()
 	graphicsParams.vSyncEnabled = false;
 	graphicsParams.windowed = true;
 
-	App* app = new App(graphicsParams, App::PhysicsParams());
+	App* app = new App(graphicsParams, PhysicsParams());
 	app->Run();
 	delete app;
 	return 0;

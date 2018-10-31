@@ -10,7 +10,7 @@
 #include "Sound/Mp3.h"
 #include "Sound/SoundClass.h"
 #include "Physics/PhysicsManager.h"
-#include "PhysicsParams.h"
+#include "EngineAPI/APITypes.h"
 #include "Actors/RigidActor.h"
 #include "Actors/SkeletalActor.h"
 
