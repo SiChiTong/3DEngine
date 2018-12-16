@@ -49,9 +49,7 @@ void CRenderer::Update(double frameTime, int fps)
 
 void CRenderer::Render(double frameTime, int fps)
 {
-	GraphicsHelper* graphicsHelper = GetGraphicsHelper();
-
-	XMStoreFloat4x4(&vpMatrix, mCamera->GetViewProjection());
+	vpMatrix = MF(mCamera->GetViewProjection());
 
 	UpdateDirectionalLightBuffer();
 	UpdatePointLightBuffer();
@@ -294,63 +292,62 @@ void CRenderer::CreateChildNode(uint32_t& nodeCount, ContainerGNode* parent, Spa
 
 void CRenderer::DrawPhysicalGeometry()
 {
-	GraphicsHelper* graphicsHelper = GetGraphicsHelper();
 	graphicsHelper->UseDefaultDpethStencilState();
 
 	meshDrawer->BindResources();
 
 	meshDrawer->BindRigidResources();
-	DrawRigidActors(normalActors, false);
+	DrawRigidActors(false);
 
 	//meshDrawer->BindInstancingRigidResources();
 	//DrawRigidActors(instancedActors, true);
 
 	meshDrawer->BindSkeletalResources();
-	DrawSkeletalActors(skeletalActors, false);
+	//DrawSkeletalActors(skeletalActors, false);
 }
 
 //We draw our terrain in this method because it is rigid.
-void CRenderer::DrawRigidActors(std::vector<RigidActor*>& actors, boolean instancing)
+void CRenderer::DrawRigidActors(boolean instancing)
 {
-	GraphicsHelper* graphicsHelper = GetGraphicsHelper();
-	if (actors.empty())
-	{
-		return;
-	}
 	int index = 0;
 	std::vector<InstanceData> instancingData;
-	ID3D11DeviceContext1* devCon = graphicsHelper->GetDeviceContext();
-	std::vector<RigidActor*>::iterator iter;
+	std::vector<GraphicsActor*>::iterator iter;
 	for (iter = actors.begin(); iter != actors.end(); iter++)
 	{
-		RigidActor* entity = *iter;
-		RigidModel* model = entity->GetModel();
+		GraphicsActor* actor = *iter;
+		if (actor->GetType() != GraphicsActorType::RIGID)
+		{
+			continue;
+		}
+
+		RigidGraphicsActor* rigidActor = (RigidGraphicsActor*)actor;
+		RigidModel* model = rigidActor->GetModel();
 		
 		if(instancing)
 		{
 			InstanceData data;
-			data.world = entity->GetTransposedXMWorldMatrix();
+			data.world = rigidActor->GetTransposedXMWorldMatrix();
 			instancingData.push_back(data);
 			if (index != actors.size() - 1) 
 			{
 				index++;
 				continue;
 			}
-			instanceBuffer->Update(devCon, &instancingData[0]);
+			instanceBuffer->Update(deviceContext, &instancingData[0]);
 			//Bind the vertex and index buffers the entity is using.
-			entity->Render(devCon, instanceBuffer->GetBuffer(), instanceBuffer->GetElementSize());
+			rigidActor->Render(deviceContext, instanceBuffer->GetBuffer(), instanceBuffer->GetElementSize());
 		}
 		else 
 		{
 			//Bind the vertex and index buffers the entity is using.
-			entity->Render(devCon);
+			rigidActor->Render(deviceContext);
 		}
 		
-		meshDrawer->SetModelParameters(entity->GetXMWorldMatrix());
+		meshDrawer->SetModelParameters(rigidActor->GetXMWorldMatrix());
 
 		for(int i = 0; i < model->subsets.size(); i++)
 		{
-			ModelSubset* subset = entity->GetModelSubset(i);
+			ModelSubset* subset = rigidActor->GetModelSubset(i);
 			SurfaceMaterial& material = model->materials[subset->matIndex];
 			if(material.hasTransparency)
 			{
@@ -376,52 +373,57 @@ void CRenderer::DrawRigidActors(std::vector<RigidActor*>& actors, boolean instan
 	}
 }
 
-void CRenderer::DrawSkeletalActors(std::vector<SkeletalActor*>& actors, boolean instancing)
+void CRenderer::DrawSkeletalActors(boolean instancing)
 {
-	GraphicsHelper* graphicsHelper = GetGraphicsHelper();
 	if (actors.empty())
 	{
 		return;
 	}
 	int index = 0;
 	std::vector<InstanceData> instancingData;
-	ID3D11DeviceContext1* devCon = graphicsHelper->GetDeviceContext();
-	std::vector<SkeletalActor*>::iterator iter;
+
+	std::vector<GraphicsActor*>::iterator iter;
 	for (iter = actors.begin(); iter != actors.end(); iter++)
 	{
-		SkeletalActor* entity = *iter;
-		SkeletalModel* model = entity->GetModel();
+		GraphicsActor* actor = *iter;
+		if (actor->GetType() != GraphicsActorType::SKELETAL)
+		{
+			continue;
+		}
+
+		SkeletalGraphicsActor* skelActor = (SkeletalGraphicsActor*)actor;
+		SkeletalModel* model = skelActor->GetModel();
 		
 		if (instancing)
 		{
 			InstanceData data;
-			data.world = entity->GetTransposedXMWorldMatrix();
+			data.world = skelActor->GetTransposedXMWorldMatrix();
 			instancingData.push_back(data);
 			if (index != actors.size() - 1)
 			{
 				index++;
 				continue;
 			}
-			instanceBuffer->Update(devCon, &instancingData[0]);
+			instanceBuffer->Update(deviceContext, &instancingData[0]);
 		} 
 
-		meshDrawer->SetModelParameters(entity->GetXMWorldMatrix());
+		meshDrawer->SetModelParameters(skelActor->GetXMWorldMatrix());
 		meshDrawer->SetSkeletalParameters(model->jointSB->GetShaderResourceView(), model->weightSB->GetShaderResourceView());
 
 		for(int i = 0; i < model->subsets.size(); i++)
 		{
 			//Bind the vertex and index buffers the entity is using.
-			ModelSubset* subset = entity->GetModelSubset(i);
+			ModelSubset* subset = skelActor->GetModelSubset(i);
 
 			if (instancing)
 			{
 				//Bind the vertex and index buffers the entity is using.
-				entity->Render(devCon, instanceBuffer->GetBuffer(), instanceBuffer->GetElementSize());
+				skelActor->Render(deviceContext, instanceBuffer->GetBuffer(), instanceBuffer->GetElementSize());
 			}
 			else
 			{
 				//Bind the vertex and index buffers the entity is using.
-				entity->Render(devCon);
+				skelActor->Render(deviceContext);
 			}
 			SurfaceMaterial& material = model->materials[subset->matIndex];
 		
@@ -452,17 +454,17 @@ void CRenderer::DrawSkeletalActors(std::vector<SkeletalActor*>& actors, boolean 
 
 void CRenderer::AddGraphicsActor(GraphicsActor* actor)
 {
-	graphicsActors.push_back(actor);
+	actors.push_back(actor);
 }
 
 void CRenderer::RemoveGraphicsActor(GraphicsActor* actor)
 {
-	GeneralUtils::RemoveVectorPointer(graphicsActors, actor, false);
+	GeneralUtils::RemoveVectorPointer(actors, actor, false);
 }
 
 void CRenderer::RemoveGraphicsActors()
 {
-	GeneralUtils::RemoveVectorPointers(graphicsActors, &graphicsActors[0], graphicsActors.size(), false);
+	GeneralUtils::RemoveVectorPointers(actors, &actors[0], actors.size(), false);
 }
 
 void CRenderer::CreateDirectionalLightBuffer(UINT lightCount)
@@ -506,7 +508,10 @@ void CRenderer::UpdateDirectionalLightBuffer()
 	std::vector<ShaderDirectionalLight> lights(dirLightBuffer->GetElementCount());
 	for (int i = 0; i < sceneParams.dirLightCount; ++i)
 	{
-		lights[i] = *dirLights[i];
+		lights[i].diffuse = dirLights[i]->GetDiffuse();
+		lights[i].dir = dirLights[i]->GetDirection();
+		lights[i].specular = dirLights[i]->GetSpecular();
+		lights[i].used = true;;
 	}
 	dirLightBuffer->Update(deviceContext, &lights[0]);
 }
@@ -521,7 +526,12 @@ void CRenderer::UpdatePointLightBuffer()
 	std::vector<ShaderPointLight> lights(pointLightBuffer->GetElementCount());
 	for (int i = 0; i < sceneParams.pointLightCount; ++i)
 	{
-		lights[i] = *pointLights[i];
+		lights[i].att = pointLights[i]->GetAttenuation();
+		lights[i].diffuse = pointLights[i]->GetDiffuse();
+		lights[i].pos = pointLights[i]->GetPosition();
+		lights[i].range = pointLights[i]->GetRange();
+		lights[i].specular = pointLights[i]->GetSpecular();
+		lights[i].used = true;;
 	}
 	pointLightBuffer->Update(deviceContext, &lights[0]);
 }
@@ -536,7 +546,14 @@ void CRenderer::UpdateSpotLightBuffer()
 	std::vector<ShaderSpotLight> lights(spotLightBuffer->GetElementCount());
 	for (int i = 0; i < sceneParams.spotLightCount; ++i)
 	{
-		lights[i] = *spotLights[i];
+		lights[i].att = spotLights[i]->GetAttenuation();
+		lights[i].cone = spotLights[i]->GetCone();
+		lights[i].diffuse = spotLights[i]->GetDiffuse();
+		lights[i].dir = spotLights[i]->GetDirection();
+		lights[i].pos = spotLights[i]->GetPosition();
+		lights[i].range = spotLights[i]->GetRange();
+		lights[i].specular = spotLights[i]->GetSpecular();
+		lights[i].used = true;;
 	}
 	spotLightBuffer->Update(deviceContext, &lights[0]);
 }

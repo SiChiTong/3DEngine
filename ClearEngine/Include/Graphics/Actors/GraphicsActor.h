@@ -13,8 +13,12 @@ typedef enum GraphicsActorType
 struct DrawableEntity
 {
 	GraphicsActor* actor;
-	UINT subsetIndex;
+	uint32_t subsetIndex;
 	BoundingSphere boundingVolume;
+
+	DrawableEntity(GraphicsActor* actor, uint32_t subsetIndex)
+		: actor(actor), subsetIndex(subsetIndex) {}
+	DrawableEntity() {}
 };
 
 class GraphicsActor

@@ -25,7 +25,7 @@ class CActor
 	protected:
 		CActor(std::wstring name, DirectX::XMFLOAT3 scale, DirectX::XMFLOAT4 rotation, DirectX::XMFLOAT3 position);
 		std::wstring name;
-		XMFLOAT3 scale;
-		XMFLOAT4 rotation;
-		XMFLOAT3 position;
+		DirectX::XMFLOAT3 scale;
+		DirectX::XMFLOAT4 rotation;
+		DirectX::XMFLOAT3 position;
 };

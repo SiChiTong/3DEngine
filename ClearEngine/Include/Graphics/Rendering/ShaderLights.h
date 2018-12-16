@@ -11,7 +11,6 @@ struct ShaderDirectionalLight
 	}
 	DirectX::XMFLOAT3 dir;
 	BOOL used;
-	DirectX::XMFLOAT4 ambient;
 	DirectX::XMFLOAT4 diffuse;
 	DirectX::XMFLOAT4 specular;
 };
@@ -27,7 +26,6 @@ struct ShaderPointLight
 	float range;
 	DirectX::XMFLOAT3 att;
 	BOOL used;
-	DirectX::XMFLOAT4 ambient;
 	DirectX::XMFLOAT4 diffuse;
 	DirectX::XMFLOAT4 specular;
 };
@@ -45,7 +43,6 @@ struct ShaderSpotLight
 	float cone;
 	DirectX::XMFLOAT3 att;
 	BOOL used;
-	DirectX::XMFLOAT4 ambient;
 	DirectX::XMFLOAT4 diffuse;
 	DirectX::XMFLOAT4 specular;
 };

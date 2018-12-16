@@ -94,7 +94,7 @@ public:
 	};
 
 	template<typename T>
-	static void RemoveAllVectorPointers(std::vector<T*>& vector)
+	static void DeleteAllVectorPointers(std::vector<T*>& vector)
 	{
 		if (vector.empty())
 		{

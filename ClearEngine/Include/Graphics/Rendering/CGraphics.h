@@ -4,7 +4,7 @@
 #include <string>
 #include "Graphics/Camera/Camera.h"
 #include "GraphicsHelper.h"
-#include "GraphicsParams.h"
+#include "EngineApi\APITypes.h"
 
 class CGraphics
 {

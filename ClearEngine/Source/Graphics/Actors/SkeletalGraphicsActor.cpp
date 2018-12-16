@@ -4,7 +4,7 @@
 SkeletalGraphicsActor::SkeletalGraphicsActor(SkeletalModel* model, DirectX::XMFLOAT3 scale, DirectX::XMFLOAT4 rotation, DirectX::XMFLOAT3 position, bool stationary)
 : GraphicsActor(scale, rotation, position, stationary), model(model)
 {
-	for (int i = 0; i < model->subsets.size(); ++i)
+	for (uint32_t i = 0; i < model->subsets.size(); ++i)
 	{
 		drawableEntities.push_back(new DrawableEntity(this, i));
 	}

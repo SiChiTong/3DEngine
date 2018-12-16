@@ -3,37 +3,33 @@
 #include <DirectXMath.h>
 #include <windows.h>
 
-struct ProgramParams
+struct AppParams
 {
 	HINSTANCE hInstance;
 	HINSTANCE hPrevInstance;
 	LPSTR     lpCmdLine;
 	int nCmdShow;
+	std::wstring appName = L"Sample";
+	std::wstring modelPath = L"";
+	std::wstring texturePath = L"";
+	std::wstring animationPath = L"";
 };
 
 struct GraphicsParams
 {
-	std::wstring appName;
 	bool vSyncEnabled;
 	float screenWidth;
 	float screenHeight;
 	bool windowed;
-	std::wstring modelPath;
-	std::wstring texturePath;
-	std::wstring animationPath;
 	bool multiSamplingenabled;
 	uint32_t multiSamplingCount;
 	uint32_t refreshRate;
 	GraphicsParams()
 	{
-		appName = L"Clear Engine";
 		vSyncEnabled = false;
 		screenWidth = 1920;
 		screenHeight = 1080;
 		windowed = true;
-		modelPath = L"";
-		texturePath = L"";
-		animationPath = L"";
 		multiSamplingenabled = true;
 		multiSamplingCount = 4;
 		refreshRate = 60;
@@ -54,7 +50,7 @@ struct PhysicsParams
 
 struct EngineParams
 {
-	ProgramParams programParams;
+	AppParams appParams;
 	GraphicsParams graphicsParams;
 	PhysicsParams physicsParams;
 };

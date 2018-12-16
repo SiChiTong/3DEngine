@@ -55,12 +55,15 @@ private:
 	void CreateSpotLightBuffer(UINT lightCount);
 	void DeleteLights();
 	void RemoveGraphicsActors();
+	void DrawPhysicalGeometry();
+	void DrawRigidActors(boolean instancing);
+	void CRenderer::DrawSkeletalActors(boolean instancing);
 
 	MeshDrawer* meshDrawer;
 	Sky* sky;
 	DirectX::XMMATRIX GetVPMatrix() const;
 	ID3D11ShaderResourceView* skyTexture = 0;
-	std::vector<GraphicsActor*> graphicsActors;
+	std::vector<GraphicsActor*> actors;
 	std::vector<DirectionalLight*> dirLights;
 	std::vector<PointLight*> pointLights;
 	std::vector<SpotLight*> spotLights;

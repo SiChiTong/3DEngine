@@ -11,8 +11,6 @@ class SkeletalActor : public CActor
 		SkeletalActor(std::wstring name, DirectX::XMFLOAT3 scale, DirectX::XMFLOAT4 rotation, DirectX::XMFLOAT3 position, SkeletalModel* model);
 		~SkeletalActor();
 		void Update(double time, ID3D11DeviceContext1* devCon);
-		void Render(ID3D11DeviceContext1* devCon);
-		void Render(ID3D11DeviceContext1* devCon, ID3D11Buffer* insanceBuffer, UINT instanceStride);
 		SkeletalModel* GetModel();
 		ModelSubset* GetModelSubset(int subsetIndex);
 		CActorType GetType();
